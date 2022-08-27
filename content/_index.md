@@ -7,85 +7,127 @@ outputs = ["Reveal"]
 
 Drake Talley
 
-<small><i class="fab fa-github"></i> axylos</small><br />
+<small><i class="fab fa-github"></i>axylos</small><br />
 <small><i class="fab fa-twitter"></i> axylos</small>
 
 ---
-### What was the goal of the Semantic Web?
-
-to make internet data "machine-readable"
-
-
-{{% note %}}
-I have a dream for the Web [in which computers] become capable of analyzing all the data on the Web – the content, links, and transactions between people and computers. A "Semantic Web", which makes this possible, has yet to emerge, but when it does, the day-to-day mechanisms of trade, bureaucracy and our daily lives will be handled by machines talking to machines. The "intelligent agents" people have touted for ages will finally materialize.
-{{% /note %}}
+### Who am I?
 
 ---
 
-# What is it?
+### What is the Semantic Web?
 
-A bundle of technologies and new standards extending WWW
+{{% fragment %}}
+A set of technologies intended to make internet data "machine-readable"
+{{% /fragment %}}
 
-- RDF + json/ld
-- data stored in "triplestores" and exposed via a SPARQL endpoint or the linked data platform standards 
-- HTTP API standards collectively termed the "Linked Data Platform"
-- solidjs (contemporary project)
+{{% fragment %}}
+- A schema design language + serialization formats (RDF and friends)
+- A query language with built-in logical inference capabilities (SPARQL)
+- Set a of protocols to coordinate server-server interactions (Linked Data Protocol)
+{{% /fragment %}}
 
 ---
 
-### And how's that going?
+### Unrealized Potential
 
-<blockquote>
-The web of hypertext everybody knows about; the web of data hasn't really spread worldwide yet. So we're still working on it,""
-</blockquote>
+{{% fragment %}}
+- Required high up-front design cost
+- Full benefit only available in niche domains or alongside mass deployments
+- Too little bang for the buck for early adopters
+{{% /fragment %}}
 
-{{% fragment %}}~Time Berners Lee{{% /fragment %}}
-<br />
-{{% fragment %}}2006{{% /fragment %}}
-
-{{% note %}}
-- things have gotten better
-- but still not ready for primetime
-{{% /note %}}
- 
 ---
 
-### Challenges
+### Centralization
 
-- complex technologies with a high learning curve
-- RDF is a poor medium for expressing application logic
-- difficult to adopt in mainstream application architectures
+---
 
-{{% note %}}
-- RDF is a work of art for uniting the varying usages of a serialization format, schema for application data, and an API specification.
-- It's also terrible to try to directly manipulate and query in an application
-- The impedance mismatch is much more severe than with SQL and OO design.
-{{% /note %}}
+### SaaS
+
+{{% fragment %}}
+- There are many scenarios that require easy discovery from a large dataset or community followed by close interactions among a relatively very small cluster of actors.
+{{% /fragment %}}
+
+---
+
+{{% fragment %}}
+SaaS businesses meet this need by enforcing a consistent data domain for all participants and centrally hosting that data alongside application servers
+{{% /fragment %}}
+
+{{% fragment %}}
+The rise of cloud computing lowered the cost of building new and focused services for addressing particular problems.
+{{% /fragment %}}
+
+---
+
+### Where to go from here?
+
+- Federated Services?
+- Blockchain?
+
+---
+Contemporary Social Protocols
+  - Solid
+  - Trellis LDP
+  - Activity Streams
+  
+---
+
+### What are we trying to solve?
+
+{{% fragment %}}
+A primary though underemphasized challenge is to expand access to highly available compute and network resources
+{{% /fragment %}}
+
+{{% fragment %}}
+We can correct the power imbalance between "client" users and server administrators by adjusting the technical comptency required to "own" a server to the same level as what is required to install and use a smartphone app.
+{{% /fragment %}}
+
+---
+
+### A return to the Semantic Web (on the cloud)
+
+{{% fragment %}}
+- Leverage RDF at the "edge" of p2p interactions
+- "Glue" together data from disparate sources/apps via SPARQL
+- Focus less on standards, more on building working prototypes that suit a particular need.
+- Expose cloud-based server "pods" that communicate with each other via these channels
+- QUIC as a transport layer
+
+---
+
+
+```mermaid
+graph LR
+      FriendPod((Friend's Pod)) --> SocialApp
+      OtherFriend((Other Friend's Pod)) --> SocialApp
+      UnknownPublicPod((Unknown Pod)) --> MicroBloggingApp
+      AdminClient --> AdminApp
+      subgraph Pod
+      SocialApp --> Datastore[(Triplestore)]
+      MicroBloggingApp --> Datastore
+      AdminApp --> Datastore
+      end
+```
+
+---
+```mermaid
+graph LR
+      PodA --> PodB{Bob's Pod}
+      PodB --> PodA{Alice's Pod}
+      Agg[/Aggregator/] --> PodA
+      Agg --> PodB
+      ClientGary((Gary)) --> Agg
+      Mila((Mila)) --> MilaPod{Mila's Pod}
+      MilaPod --> Agg
+```
 
 ---
 
 what it's like trying to adopt Semantic Web Tech
 
 ![tech](mess.jpeg)
-
-{{% note %}}
-like yeah I could probably build something with that...maybe
-{{% note %}}
-
----
-
-![wrong](wrong.jpeg)
-
----
-
-### Why does this matter now?
-
-Aren't we all concerned about "decentralizing" a small number of incumbent web applications?
-
-{{% note %}}
-- blockchain is too complicated, isn't really decentralized, and will never work
-- gossip protocols have crude privacy and authorization controls
-{{% /note %}}
 
 ---
 

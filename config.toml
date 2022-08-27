@@ -12,6 +12,9 @@ baseName = "index"
 mediatype = "text/html"
 isHTML = true
 
+[reveal_hugo]
+theme = "robot-lung"
+
 [params.reveal_hugo]
-custom_theme = "robot-lung.css"
+theme = "solarized"
 custom_js = "fontawesome-all.js"
