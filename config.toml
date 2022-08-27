@@ -1,4 +1,4 @@
-baseURL = 'http://example.org/'
+baseURL = 'https://axylos.github.io/lightning-klump/'
 languageCode = 'en-us'
 title = 'My New Hugo Site'
 
