@@ -21,38 +21,41 @@ Drake Talley
 A set of technologies intended to make internet data "machine-readable"
 {{% /fragment %}}
 
-{{% fragment %}}
-- A schema design language + serialization formats (RDF and friends)
-- A query language with built-in logical inference capabilities (SPARQL)
-- Set a of protocols to coordinate server-server interactions (Linked Data Protocol)
-{{% /fragment %}}
+---
+
+
+- {{< frag c="A schema design language + serialization formats (RDF and friends)" >}}
+- {{< frag c="A query language with built-in logical inference capabilities (SPARQL)" >}}
+- {{< frag c="Set a of protocols to coordinate server-server interactions (Linked Data Protocol)" >}}
 
 ---
 
-### Unrealized Potential
+### Unrealized Potential (Historically)
 
 {{% fragment %}}
 - Required high up-front design cost
-- Full benefit only available in niche domains or alongside mass deployments
+- Full benefit only available in niche domains or with widespread adoption
 - Too little bang for the buck for early adopters
 {{% /fragment %}}
 
 ---
 
-### Centralization
-
----
-
 ### SaaS
 
-{{% fragment %}}
-- There are many scenarios that require easy discovery from a large dataset or community followed by close interactions among a relatively very small cluster of actors.
-{{% /fragment %}}
+![keanu](keanu.jpg)
 
 ---
 
+### Lessons to be Learned
+
+Many Saas solutions enable low-effort discovery from massive datasets or communities followed by close interactions among a small group of participants.
+
+---
+
+### Ideas to Steal
+
 {{% fragment %}}
-SaaS businesses meet this need by enforcing a consistent data domain for all participants and centrally hosting that data alongside application servers
+SaaS meets enforces a consistent data schema for all participants which makes it possible to build efficient and predictable user interfaces.
 {{% /fragment %}}
 
 {{% fragment %}}
@@ -77,7 +80,7 @@ Contemporary Social Protocols
 ### What are we trying to solve?
 
 {{% fragment %}}
-A primary though underemphasized challenge is to expand access to highly available compute and network resources
+A great deal of indirect attention is being directed to the under-appreciated problem of expanding access to cheap compute resources with highly reliable network connectivity.
 {{% /fragment %}}
 
 {{% fragment %}}
@@ -94,9 +97,17 @@ We can correct the power imbalance between "client" users and server administrat
 - Focus less on standards, more on building working prototypes that suit a particular need.
 - Expose cloud-based server "pods" that communicate with each other via these channels
 - QUIC as a transport layer
+{{% /fragment %}}
 
 ---
 
+### Why cloud-backed p2p?
+
+- Fine-grained and tweakable access controls
+- Very cheap to handle more computationally intensive tasks
+- All of a user's data across domains in one place and queryable
+
+---
 
 ```mermaid
 graph LR
@@ -131,58 +142,3 @@ what it's like trying to adopt Semantic Web Tech
 
 ---
 
-The root problem targeted by proposed "decentralized" schemes is accessible and reliable networked compute resources.
-
-{{% note %}}
-this also holds for things like IPFS and other distributed data stores
-since servers run the world, it seems we've tried to elevate a network of home PC's into a substrate for buildilng a new web.
-
-this will not work.
-{{% /note %}}
-
----
-
-Cloud computing is the confluence of [the] four revolutions:
-
-- The Internet
-- Distributed Version Control
-- Open Source
-- Moore's Law
-
----
-
-There is currently a bounty of "free" interesting software tools...
-
-{{% fragment %}}but they all are targeted towards developers {{% /fragment %}}
-
-{{% fragment %}}We should begin to design for anyone capable of downloading and using "apps" on a smart phone {{% /fragment %}}
-
-{{% note %}}
-Cloud computing as a service allows web developers to forget about system administration and only focus on producing and deploying application-specific behavior
-
-Users are plenty "technical"!  We as developers and product designers just need to prioritize that community as well.
-{{% /note %}}
-
----
-
-### A New Goal
-
-Empower users with the ability and responsibility of managing their own cloud resources.
-
-<small>
-What if administering an application web server was as easy as installing and using a smartphone app?
-</small>
-
-{{% note %}}
-The division between user "client" software and "server administration" is largely artificial.  While it may have made sense in a particular set of circumstances, we should not treat this application design as immutable or unique
-{{% /note %}}
-
----
-
-# Mermaid Sample
-
-```mermaid
-graph LR
-  A --> B
-  B --> C
-```
