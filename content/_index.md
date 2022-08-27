@@ -23,10 +23,24 @@ A set of technologies intended to make internet data "machine-readable"
 
 ---
 
+### RDF (and friends)
 
-- {{< frag c="A schema design language + serialization formats (RDF and friends)" >}}
-- {{< frag c="A query language with built-in logical inference capabilities (SPARQL)" >}}
-- {{< frag c="Set a of protocols to coordinate server-server interactions (Linked Data Protocol)" >}}
+A homoiconic schema design language for rich data models tightly integrated with DNS leveraging IRI's as a primitive value form.
+
+Within RDF all of the below are first-class concepts expressible with the same syntax+grammer.
+- {{< frag c="Schema types and relationship definitions (has-one, belongs-to)" >}}
+- {{< frag c="Concrete resources and their related resources" >}}
+- {{< frag c="Logical inference relations which enable rich schematic translations (sub-class of, same-as, etc.)" >}}
+
+
+
+---
+
+### SPARQL
+
+- Query engine with built-in inference reasoner
+- Originally intended for federated queries across disparate data sources
+- Higher level inference reasoners great for extracting subtle features from complex data sets, but is too expensive and overkill for typical app development.
 
 ---
 
@@ -59,7 +73,7 @@ SaaS meets enforces a consistent data schema for all participants which makes it
 {{% /fragment %}}
 
 {{% fragment %}}
-The rise of cloud computing lowered the cost of building new and focused services for addressing particular problems.
+Innovations in cloud compute services effectively lowered the cost of building new and focused services for addressing particular problems.
 {{% /fragment %}}
 
 ---
