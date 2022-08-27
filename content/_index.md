@@ -17,22 +17,31 @@ Drake Talley
 
 ### What is the Semantic Web?
 
-{{% fragment %}}
 A set of technologies intended to make internet data "machine-readable"
-{{% /fragment %}}
 
 ---
 
 ### RDF (and friends)
 
-A homoiconic schema design language for rich data models tightly integrated with DNS leveraging IRI's as a primitive value form.
+A homoiconic schema design language for rich data models tightly integrated with DNS, leveraging IRI's as primive terms.
 
+```
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix ex: <http://example.org/stuff/1.0/> .
+
+<http://www.w3.org/TR/rdf-syntax-grammar>
+  dc:title "RDF/XML Syntax Specification (Revised)" ;
+  ex:editor [
+    ex:fullname "Dave Beckett";
+    ex:homePage <http://purl.org/net/dajobe/>
+  ] .
+```
+--- 
 Within RDF all of the below are first-class concepts expressible with the same syntax+grammer.
-- {{< frag c="Schema types and relationship definitions (has-one, belongs-to)" >}}
-- {{< frag c="Concrete resources and their related resources" >}}
-- {{< frag c="Logical inference relations which enable rich schematic translations (sub-class of, same-as, etc.)" >}}
-
-
+- Schema types (User, Post) and relationship definitions (has-one, belongs-to)
+- Concrete resources and their related resources
+- Logical inference relations which enable rich schematic translations (sub-class of, same-as, etc.)
 
 ---
 
@@ -40,17 +49,22 @@ Within RDF all of the below are first-class concepts expressible with the same s
 
 - Query engine with built-in inference reasoner
 - Originally intended for federated queries across disparate data sources
-- Higher level inference reasoners great for extracting subtle features from complex data sets, but is too expensive and overkill for typical app development.
+- Higher level logical entailments great for extracting subtle features from complex data sets, but is too expensive and overkill for typical app development.
+
+---
+
+### What it's like trying to adopt Semantic Web Tech
+
+![tech](mess.jpeg)
 
 ---
 
 ### Unrealized Potential (Historically)
 
-{{% fragment %}}
 - Required high up-front design cost
-- Full benefit only available in niche domains or with widespread adoption
+- RDF is difficult to work with as an application model
+- Did not offer a compelling value-add for most pressing user needs
 - Too little bang for the buck for early adopters
-{{% /fragment %}}
 
 ---
 
@@ -62,60 +76,52 @@ Within RDF all of the below are first-class concepts expressible with the same s
 
 ### Lessons to be Learned
 
-Many Saas solutions enable low-effort discovery from massive datasets or communities followed by close interactions among a small group of participants.
+- Many Saas solutions enable low-effort discovery from massive datasets or communities followed by close interactions among a small group of participants.
 
----
+- The SaaS model enforces a consistent data schema for all participants which makes it possible to build efficient and predictable user interfaces.
 
-### Ideas to Steal
-
-{{% fragment %}}
-SaaS meets enforces a consistent data schema for all participants which makes it possible to build efficient and predictable user interfaces.
-{{% /fragment %}}
-
-{{% fragment %}}
-Innovations in cloud compute services effectively lowered the cost of building new and focused services for addressing particular problems.
-{{% /fragment %}}
-
+- Innovations in cloud compute offerings significantly lowered the cost of building new services for addressing domain-specific problems.
 ---
 
 ### Where to go from here?
 
 - Federated Services?
 - Blockchain?
-
----
-Contemporary Social Protocols
+- Gossip Protocols (SSB)?
+- Contemporary SW Tech?
   - Solid
   - Trellis LDP
-  - Activity Streams
-  
+  - Social Protocols
 ---
 
 ### What are we trying to solve?
 
 {{% fragment %}}
-A great deal of indirect attention is being directed to the under-appreciated problem of expanding access to cheap compute resources with highly reliable network connectivity.
+A common thread is the attempt to expand access to cheap and reliable compute resources with highly available network connectivity.
 {{% /fragment %}}
 
 {{% fragment %}}
-We can correct the power imbalance between "client" users and server administrators by adjusting the technical comptency required to "own" a server to the same level as what is required to install and use a smartphone app.
+We can correct the power imbalance between "client" users and server administrators by adjusting the technical threshold for "owning" a server to the same level as what is required to install and use a smartphone app.
 {{% /fragment %}}
 
 ---
 
-### A return to the Semantic Web (on the cloud)
+### A return to the Semantic Web on the cloud
 
-{{% fragment %}}
-- Leverage RDF at the "edge" of p2p interactions
+(via a p2p topology)
+
+---
+
+- Expose cloud-based server "pods" that communicate with each other and expose web UI's for humans
+  - handle domain specific operations with installable "apps".
+- Leverage RDF at the "edge" of p2p interactions (an in-app ORM layer would help here)
 - "Glue" together data from disparate sources/apps via SPARQL
-- Focus less on standards, more on building working prototypes that suit a particular need.
-- Expose cloud-based server "pods" that communicate with each other via these channels
-- QUIC as a transport layer
-{{% /fragment %}}
+  - This also solves the schema evolution problem
+- Use QUIC as a transport layer rather than Linked Data Platform or HTTP Social Web protocols
 
 ---
 
-### Why cloud-backed p2p?
+### Why cloud-based p2p?
 
 - Fine-grained and tweakable access controls
 - Very cheap to handle more computationally intensive tasks
@@ -150,9 +156,4 @@ graph LR
 
 ---
 
-what it's like trying to adopt Semantic Web Tech
-
-![tech](mess.jpeg)
-
----
-
+# FIN
